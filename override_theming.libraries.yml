@@ -1,0 +1,11 @@
+default:
+  version: VERSION
+  css:
+    theme:
+      css/default.css: {}
+
+admin:
+  version: VERSION
+  css:
+    theme:
+      css/admin.css: {}

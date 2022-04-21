@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * Implements hook_page_attachments().
+ */
+function override_theming_page_attachments(array &$attachments) {
+  $config = \Drupal::config('system.theme');
+  $theme = \Drupal::theme()->getActiveTheme()->getName();
+
+  // Attach library for the default theme.
+  if ($theme == $config->get('default')) {
+    $attachments['#attached']['library'][] = 'override_theming/default';
+  }
+
+  // Attach library for the admin theme.
+  if ($theme == $config->get('admin')) {
+    $attachments['#attached']['library'][] = 'override_theming/admin';
+  }
+
+}
